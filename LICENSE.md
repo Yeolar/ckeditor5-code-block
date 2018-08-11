@@ -1,7 +1,7 @@
 Software License Agreement
 ==========================
 
-**CKEditor 5 Block Quote Feature** – https://github.com/ckeditor/ckeditor5-block-quote <br>
+**CKEditor 5 Code Block Feature** – https://github.com/Yeolar/ckeditor5-code-block <br>
 Copyright (c) 2003-2018, [CKSource](http://cksource.com) Frederico Knabben. All rights reserved.
 
 Licensed under the terms of [GNU General Public License Version 2 or later](http://www.gnu.org/licenses/gpl.html).
