@@ -15,7 +15,7 @@ npm install https://github.com/Yeolar/ckeditor5-code-block
 
 Update src/ckeditor.js with:
 
-```
+```js
 import CodeBlock from '@Yeolar/ckeditor5-code-block/src/codeblock';
 
 ClassicEditor.builtinPlugins = [
@@ -42,7 +42,7 @@ npm run build
 
 In your templates, add (depends highlight.js):
 
-```
+```html
 <script src="/static/highlight/highlight.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/static/highlight/styles/default.css" />
 <script>
