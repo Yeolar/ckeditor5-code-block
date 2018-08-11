@@ -66,10 +66,5 @@ export default class CodeBlockEditing extends Plugin {
 				evt.stop();
 			}
 		} );
-
-    this.listenTo( this.editor.editing.view.document, 'shiftenter', ( evt, data ) => {
-      data.preventDefault();
-      evt.stop();
-    } );
 	}
 }
