@@ -9,6 +9,8 @@ See https://github.com/ckeditor/ckeditor5/issues/436
 
 ## Usage
 
+In ckeditor5-build-classic project:
+
 ```
 npm install https://github.com/Yeolar/ckeditor5-code-block
 ```
@@ -19,16 +21,16 @@ Update src/ckeditor.js with:
 import CodeBlock from '@Yeolar/ckeditor5-code-block/src/codeblock';
 
 ClassicEditor.builtinPlugins = [
-  ...
+  // ...
   CodeBlock
 ];
 
 ClassicEditor.defaultConfig = {
   toolbar: {
     items: [
-      ...
+      // ...
       'blockQuote',
-      ...
+      // ...
     ]
   },
 };
