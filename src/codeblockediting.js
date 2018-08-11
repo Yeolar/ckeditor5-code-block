@@ -65,6 +65,14 @@ export default class CodeBlockEditing extends Plugin {
 				data.preventDefault();
 				evt.stop();
 			}
+
+			if ( doc.selection.isCollapsed && data.isSoft && command.value ) {
+				this.editor.execute( 'input', { text: '\n' } );
+				this.editor.editing.view.scrollToTheSelection();
+
+				data.preventDefault();
+				evt.stop();
+			}
 		} );
 	}
 }

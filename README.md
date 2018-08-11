@@ -49,8 +49,6 @@ In your templates, add (depends highlight.js):
 <link rel="stylesheet" type="text/css" href="/static/highlight/styles/default.css" />
 <script>
 $(document).ready(function() {
-    hljs.configure({useBR: true});  // handle <br>
-
     $('pre p').each(function(i, block) {  // use <pre><p>
       hljs.highlightBlock(block);
     });
