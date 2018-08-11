@@ -50,7 +50,7 @@ export default class CodeBlockEditing extends Plugin {
 		const command = editor.commands.get( 'codeBlock' );
 
 		// Overwrite default Enter key behavior.
-		// If Enter key is pressed with selection collapsed in empty block inside a quote, break the quote.
+		// If Enter key is pressed with selection collapsed in empty block inside a block, break the block.
 		// This listener is added in afterInit in order to register it after list's feature listener.
 		// We can't use a priority for this, because 'low' is already used by the enter feature, unless
 		// we'd use numeric priority in this case.
@@ -66,5 +66,10 @@ export default class CodeBlockEditing extends Plugin {
 				evt.stop();
 			}
 		} );
+
+    this.listenTo( this.editor.editing.view.document, 'shiftenter', ( evt, data ) => {
+      data.preventDefault();
+      evt.stop();
+    } );
 	}
 }

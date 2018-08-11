@@ -55,7 +55,7 @@ export default class CodeBlockCommand extends Command {
 			} else {
 				const blocksToBlock = blocks.filter( block => {
 					// Already blocked blocks needs to be considered while quoting too
-					// in order to reuse their <bQ> elements.
+					// in order to reuse their <pre> elements.
 					return findBlock( block ) || checkCanBeBlocked( schema, block );
 				} );
 
@@ -120,7 +120,7 @@ export default class CodeBlockCommand extends Command {
 				return;
 			}
 
-			// The group of blocks are at the beginning of an <bQ> so let's move them left (out of the <bQ>).
+			// The group of blocks are at the beginning of an <pre> so let's move them left (out of the <pre>).
 			if ( groupRange.start.isAtStart ) {
 				const positionBefore = Position.createBefore( groupRange.start.parent );
 
@@ -129,7 +129,7 @@ export default class CodeBlockCommand extends Command {
 				return;
 			}
 
-			// The blocks are in the middle of an <bQ> so we need to split the <bQ> after the last block
+			// The blocks are in the middle of an <pre> so we need to split the <pre> after the last block
 			// so we move the items there.
 			if ( !groupRange.end.isAtEnd ) {
 				writer.split( groupRange.end );
@@ -165,9 +165,9 @@ export default class CodeBlockCommand extends Command {
 			blocksToMerge.push( block );
 		} );
 
-		// Merge subsequent <bQ> elements. Reverse the order again because this time we want to go through
-		// the <bQ> elements in the source order (due to how merge works – it moves the right element's content
-		// to the first element and removes the right one. Since we may need to merge a couple of subsequent `<bQ>` elements
+		// Merge subsequent <pre> elements. Reverse the order again because this time we want to go through
+		// the <pre> elements in the source order (due to how merge works – it moves the right element's content
+		// to the first element and removes the right one. Since we may need to merge a couple of subsequent `<pre>` elements
 		// we want to keep the reference to the first (furthest left) one.
 		blocksToMerge.reverse().reduce( ( currentBlock, nextBlock ) => {
 			if ( currentBlock.nextSibling == nextBlock ) {
